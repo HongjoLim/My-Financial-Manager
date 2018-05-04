@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/main"
+            android:title="Main" />
+
+        <item android:id="@+id/nav_expense"
+            android:title="Expense"
+            android:icon="@drawable/expense"/>
+        <item
+            android:id="@+id/nav_income"
+            android:icon="@drawable/income"
+            android:title="Income" />
+        <item
+            android:id="@+id/nav_accounts"
+            android:icon="@drawable/account"
+            android:title="Accounts" />
+        <item
+            android:id="@+id/nav_credit"
+            android:icon="@drawable/card"
+            android:title="Credit Cards"/>
+        <item
+            android:id="@+id/nav_budget"
+            android:icon="@drawable/budgets"
+            android:title="Budgets" />
+        <item
+            android:id="@+id/nav_income_category"
+            android:icon="@drawable/budgets"
+            android:title="Earning Plan" />
+        <item
+            android:id="@+id/nav_transfer"
+            android:icon="@drawable/transfer"
+            android:title="Transfer" />
+    </group>
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Settings"/>
+    <item android:title="Exit">
+        <menu>
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/exit"
+                android:title="Exit" />
+        </menu>
+    </item>
+
+
+</menu>

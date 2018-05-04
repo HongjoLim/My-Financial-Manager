@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">My Financial Manager</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="income_switch_button">Income</string>
+    <string name="expense_switch_button">Expense</string>
+    <string name="expense_category">Expense Category</string>
+    <string name="transfer">Transfer</string>
+    <string name="account_detail">Account Detail</string>
+    <string name="balance_adjustment">balance adjustment</string>
+    <string name="remaining">remaining:  </string>
+    <string name="earned">earned:  </string>
+    <string name="for_the_last_7_days">For the last 7 days</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="total_income">Total Income</string>
+    <string name="net_earnings">Net Earnings</string>
+    <string name="monthly">Monthly</string>
+    <string name="total_monthly_budget">Monthly Amount</string>
+    <string name="total_spent">Total Spent</string>
+    <string name="budget_summary">Budget Summary</string>
+    <string name="there_is_no_expenditure_found_this_month_yet">There is no expenditure found this month yet</string>
+    <string name="earnings_for_this_month">Earnings for this month</string>
+    <string name="expectation">expectation</string>
+    <string name="cancel">Cancel</string>
+    <string name="earning_plans">Earning Plans</string>
+    <string name="accounts_list">Accounts List</string>
+    <string name="progress_cannot_be_shown_unless_plans_are_set">Progress cannot be shown unless plans are set</string>
+    <string name="assets">Assets</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="credit_cards">Credit Cards</string>
+    <string name="select_payment_date">Select Payment Date</string>
+    <string name="transaction_history">Transaction history</string>
+
+    <string-array name="currency">
+        <item>Canada</item>
+        <item>US</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>China</item>
+        <item>Japan</item>
+        <item>Korea</item>
+    </string-array>
+
+    <string-array name="dates">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="general">General</string>
+
+    <string name="enable_login">Enable Login</string>
+
+    <string name="change_password">Change Password</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Create Account</string>
+    <string name="security">Security</string>
+    <string name="enable_login_summary">Set Login Function On For Security</string>
+    <string name="data_display">Data Display</string>
+    <string name="show_adjustment">Show Balance Adjustments</string>
+    <string name="edit_category">Edit Category</string>
+    <string name="income_category">Income Category</string>
+    <string name="add_category">Add Category</string>
+    <string name="exit_category">Edit Category</string>
+</resources>

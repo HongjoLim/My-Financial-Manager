@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/credit_name_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/adding_transaction_line_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/account" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="8">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/credit_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="account name"
+                android:maxLength="10"
+                android:textSize="@dimen/text_size"
+                android:inputType="textAutoComplete" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/credit_account_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/adding_transaction_line_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/credit_name_line">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/type" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="8">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/credit_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="type"
+                android:textSize="@dimen/text_size"
+                android:maxLength="10"
+                android:inputType="textAutoComplete" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/credit_paydate_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/adding_transaction_line_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/credit_account_line">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/money" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="8">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/account_balance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="balance"
+                android:maxLength="10"
+                android:textSize="@dimen/text_size"
+                android:inputType="numberDecimal" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/account_history_tv"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:text="@string/transaction_history"/>
+
+    <ListView
+        android:scrollbars="none"
+        android:layout_marginTop="8dp"
+        android:id="@+id/account_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

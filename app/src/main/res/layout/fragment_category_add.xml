@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/category_dialog_title"
+            android:layout_marginTop="3dp"
+            android:textAlignment="textStart"
+            android:layout_marginStart="24dp"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/category_delete"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/delete"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/edit"
+            android:id="@+id/category_edit"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="8dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/category_dialog_name"
+            android:layout_width="match_parent"
+            android:maxLength="20"
+            android:textSize="@dimen/text_size"
+            android:layout_height="match_parent"
+            android:hint="category name"
+            android:inputType="textAutoComplete" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="8dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/category_dialog_amount"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size"
+            android:maxLength="10"
+            android:layout_height="match_parent"
+            android:hint="monthly amount"
+            android:inputType="numberDecimal" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/category_detail_dialog_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            style="?android:borderlessButtonStyle"/>
+
+    </LinearLayout>
+
+</LinearLayout>

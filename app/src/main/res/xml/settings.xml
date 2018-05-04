@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory android:title="@string/security">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="ENABLE_LOGIN"
+            android:summary="@string/enable_login_summary"
+            android:title="@string/enable_login" />
+
+        <EditTextPreference
+            android:key="edit_text"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/change_password" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/data_display">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="SHOW ADJUSTMENTS"
+            android:title="Show Balance Adjustments"
+            android:summary="@string/show_adjustment"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Local">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/currency"
+            android:entryValues="@array/currency"
+            android:key="CURRENCY"
+            android:title="Currency" />
+    </PreferenceCategory>
+</PreferenceScreen>

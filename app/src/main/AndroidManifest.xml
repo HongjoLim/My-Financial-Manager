@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hongjo.myfinancialmanager">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name=".database.DataProvider"
+            android:authorities="com.example.myfinancialmanager.dataprovider"
+            android:exported="false" />
+
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingAccountsActivity"
+            android:label="Add Accounts"
+            android:parentActivityName=".ShowingAccountsActivity" />
+        <activity
+            android:name=".ShowingAccountsActivity"
+            android:label="My Accounts"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BudgetActivity"
+            android:label="Budget"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShowingExpensesActivity"
+            android:label="Expense"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddingExpenseActivity"
+            android:label="Add Expense"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddingIncomeActivity"
+            android:label="Add Income"
+            android:parentActivityName=".ShowingIncomeActivity" />
+        <activity
+            android:name=".ShowingIncomeActivity"
+            android:label="Income"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShowingExpensesDetailActivity"
+            android:label="Expense Detail"
+            android:parentActivityName=".ShowingExpensesActivity" />
+        <activity
+            android:name=".ShowingIncomeDetailActivity"
+            android:label="Income Detail"
+            android:parentActivityName=".ShowingIncomeActivity" />
+        <activity
+            android:name=".TransferActivity"
+            android:label="@string/transfer"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".IncomeCategoryActivity"
+            android:label="Income Category"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShowingCreditActivity"
+            android:label="Credit Cards"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddingCreditActivity"
+            android:label="Adding Cards"
+            android:parentActivityName=".ShowingCreditActivity" />
+        <activity
+            android:name=".ShowingCreditDetailActivity"
+            android:label="Credit Detail"
+            android:parentActivityName=".ShowingCreditActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity"/>
+    </application>
+
+</manifest>

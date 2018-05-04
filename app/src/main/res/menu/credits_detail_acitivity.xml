@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/credit_menuItem_delete"
+        android:orderInCategory="101"
+        android:icon="@drawable/delete"
+        android:title="delete"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="edit"
+        android:id="@+id/credit_menuItem_edit"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:icon="@drawable/edit"/>
+    <item
+        android:title="pay"
+        android:id="@+id/credit_menuItem_pay"
+        app:showAsAction="always"
+        android:orderInCategory="100"/>
+
+</menu>

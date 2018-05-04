@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryText"
+    tools:context=".MonthlyNetEarningsFragment">
+
+    <LinearLayout
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginBottom="16dp"
+            android:id="@+id/accListTv"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="Net Earnings Past 6 months"/>
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/netEarnings_graph_monthly"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

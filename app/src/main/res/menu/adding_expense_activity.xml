@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:title="switch"
+    android:id="@+id/income_switch_button"
+    android:orderInCategory="101"
+    app:showAsAction="always"
+    android:icon="@drawable/plus"/>
+
+    <item
+        android:title="confirm"
+        android:id="@+id/expense_save"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:icon="@drawable/save"
+        />
+</menu>
