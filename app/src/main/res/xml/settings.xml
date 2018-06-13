@@ -10,12 +10,6 @@
             android:summary="@string/enable_login_summary"
             android:title="@string/enable_login" />
 
-        <EditTextPreference
-            android:key="edit_text"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:title="@string/change_password" />
-
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/data_display">
 

@@ -1,6 +1,7 @@
 package com.example.hongjo.myfinancialmanager;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.net.Uri;
+import android.widget.Toast;
 
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
@@ -29,6 +33,8 @@ public class LoginActivity extends AppCompatActivity{
 
     private String email, password;
 
+    private TextView forgotPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +45,14 @@ public class LoginActivity extends AppCompatActivity{
         emailEdt = findViewById(R.id.email);
         passwordEdt = findViewById(R.id.password);
 
+        forgotPassword = findViewById(R.id.forgot_password);
+
         Button signIn = findViewById(R.id.sign_in_button);
         Button createAccount = findViewById(R.id.create_account_button);
 
         signIn.setOnClickListener(listener);
         createAccount.setOnClickListener(listener);
+        forgotPassword.setOnClickListener(listener);
 
     }
 
@@ -59,6 +68,10 @@ public class LoginActivity extends AppCompatActivity{
                 case R.id.create_account_button:
                     register();
                     break;
+                    //if the user forgets the password, send it to the user's email
+                case R.id.forgot_password:
+
+                    break;
             }
         }
     };
@@ -73,6 +86,12 @@ public class LoginActivity extends AppCompatActivity{
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Sign In Error");
+
+        if(email.isEmpty()||password.isEmpty()){
+            builder.setMessage("Both email and password are required");
+            builder.setCancelable(false).setPositiveButton("OK", null).create().show();
+            return;
+        }
         //if there is no user in the database
         if(user==null){
             builder.setMessage("There is no user In database");
@@ -92,7 +111,7 @@ public class LoginActivity extends AppCompatActivity{
                 builder.setCancelable(false).setPositiveButton("OK", null).create().show();
             }
         }else{
-            //if there is no user by the email in the database
+            //if there is no user who has the same email in the database
             builder.setMessage("No Email found in the Database");
             builder.setCancelable(false).setPositiveButton("OK", null).create().show();
         }

@@ -106,6 +106,14 @@
                 android:text="@string/register"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="forgot password"
+                android:layout_gravity="center"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
