@@ -2,10 +2,10 @@
 
 This is a personal project to learn about Android Studio. It helps the user track all the expenditure and revenue by recording them as the user spends money.
 
-## Project title <br/>
+## Project title
 My Financial Manager (original: My Thrifty Guide)
 
-## Project duration <br/>
+## Project duration
 Mar 1st, 2018 - Apr 8th, 2018.
 
 ## Framework and language
@@ -45,59 +45,67 @@ A user can…
 
 ## ScreenShots
 ### Login Activity 
-![login_activity](https://user-images.githubusercontent.com/35909587/41076205-7810a932-69de-11e8-8e4b-c925fbc28e7e.PNG)
+![login_activity](https://user-images.githubusercontent.com/35909587/41353323-f126fcbc-6ee9-11e8-8b99-38b41396508f.PNG)
 
 ### Setting Default Values
 The user can set default balance of Cash, and choose currency
-![select_default_cash](https://user-images.githubusercontent.com/35909587/41076650-a2b0afaa-69e0-11e8-8137-052cccec2133.PNG)
-![choose_currency](https://user-images.githubusercontent.com/35909587/41076654-a704dbc6-69e0-11e8-9f0a-db9ad9026d84.PNG)
+![select_default_cash](https://user-images.githubusercontent.com/35909587/41353056-1f765550-6ee9-11e8-86c5-9c98f9df4b3d.PNG)
+![choose_currency](https://user-images.githubusercontent.com/35909587/41353349-05378438-6eea-11e8-9c39-90b7b987303b.PNG)
 
 ### Main Activity
-<ul>
-  <li>Navigation Drawer Menu</li>
-![navigation_drawer_menu](https://user-images.githubusercontent.com/35909587/41076259-bffeac4e-69de-11e8-825a-98bdf718b47d.PNG)
-  <li> Net Earnings for the past 7 days & 6 months</li>
-![main_activity](https://user-images.githubusercontent.com/35909587/41076247-b1db11d4-69de-11e8-9d9e-fd16a7f09dbf.PNG)
-  <li>Assets pie chart</li>
-![assets_piechart](https://user-images.githubusercontent.com/35909587/41076250-b3ce7d64-69de-11e8-9132-9c5882998ecb.PNG)
-  <li>Budget Summary for this month</li>
-![budget_summary](https://user-images.githubusercontent.com/35909587/41076253-b59657f2-69de-11e8-8cf9-e368fcc4189c.PNG)
-  <li>The percentage of earnings</li>
-![earning_progressbar2](https://user-images.githubusercontent.com/35909587/41076324-03d717e4-69df-11e8-8dc2-35d99fc27afc.PNG)
-</ul>
+Navigation Drawer Menu
+![navigation_drawer_menu](https://user-images.githubusercontent.com/35909587/41353053-1f52a088-6ee9-11e8-9ff2-84ad040304c6.PNG)
+
+Net Earnings for the past 7 days & 6 months
+![main_activity](https://user-images.githubusercontent.com/35909587/41351477-78a2113c-6ee4-11e8-8de3-cba774759b58.PNG)
+
+Assets pie chart & Budget Summary for this month
+![assets_piechart](https://user-images.githubusercontent.com/35909587/41353480-58d8f450-6eea-11e8-85d0-299a5c9fd8da.PNG)
+![budget_summary](https://user-images.githubusercontent.com/35909587/41353473-566e7ce4-6eea-11e8-93f2-0880f023a006.PNG)
+
+The percentage of earnings
+![earning_progressbar2](https://user-images.githubusercontent.com/35909587/41352351-41aee3a0-6ee7-11e8-88c5-3b0db23e6483.PNG)
 
 ### Showing Expense Activity
 Displays all the records of expense
-![showing_expense_activity](https://user-images.githubusercontent.com/35909587/41076446-a2f38588-69df-11e8-96fb-b2144b1be668.PNG)
+![showing_expense_activity](https://user-images.githubusercontent.com/35909587/41353061-1fcb0c8a-6ee9-11e8-8710-cad4fe1963cd.PNG)
 
 ### Adding Expense Activity
 The user can add Expense
-![adding_expense_activity](https://user-images.githubusercontent.com/35909587/41076455-ae58958a-69df-11e8-9509-6f907c27b32e.PNG)
+![adding_expense_activity](https://user-images.githubusercontent.com/35909587/41352375-524748b0-6ee7-11e8-9a47-35b0650c0205.PNG)
 
 ### Showing Income Activity
 Displays all the records of income
-![showing_income_acgtivity](https://user-images.githubusercontent.com/35909587/41076459-b72320b8-69df-11e8-8944-d8bcc72607d7.PNG)
+![showing_income_acgtivity](https://user-images.githubusercontent.com/35909587/41353062-1fd838ce-6ee9-11e8-82fb-bf9b86dbb07f.PNG)
 
 ### Adding Income Activity
 The user can add income
-![salary](https://user-images.githubusercontent.com/35909587/41076516-11d69f1c-69e0-11e8-92a2-881fd41a563a.PNG)
+![salary](https://user-images.githubusercontent.com/35909587/41353054-1f661208-6ee9-11e8-947b-27c2206a0f5a.PNG)
 
 ### Showing Accounts Activity
 Displays all the accounts
-![showing_accounts_activity](https://user-images.githubusercontent.com/35909587/41076472-c48194d8-69df-11e8-8457-f8e122448454.PNG)
+![showing_accounts_activity](https://user-images.githubusercontent.com/35909587/41352499-a0958bda-6ee7-11e8-9e9b-9518679298fd.PNG)
 
 ### Setting Accounts Activity
 The user can set an account
-![setting_accounts_activity](https://user-images.githubusercontent.com/35909587/41076471-c11ac6d4-69df-11e8-85cb-39dce6da4793.PNG)
+![setting_accounts_activity](https://user-images.githubusercontent.com/35909587/41353057-1f864e4c-6ee9-11e8-9596-b28037dcc111.PNG)
 
 ### Budget Activity
 The user can set expense categories
-![budget_activity](https://user-images.githubusercontent.com/35909587/41076605-73397446-69e0-11e8-81d5-87724886ee8f.PNG)
+![budget_activity](https://user-images.githubusercontent.com/35909587/41353477-57bf34f8-6eea-11e8-8ba8-5acf87354576.PNG)
 
 ### Earning Plans Activity
 The user can set income categories
-![earning_plan_activity](https://user-images.githubusercontent.com/35909587/41076614-7a55dda0-69e0-11e8-8069-09e3b428e878.PNG)
+![earning_plan_activity](https://user-images.githubusercontent.com/35909587/41353322-efee9bb6-6ee9-11e8-8cae-05c0721f5567.PNG)
 
 ### Transfer Activity
 The user can transfer balance between accounts including cash
-![transfer_activity](https://user-images.githubusercontent.com/35909587/41076478-dc2c11f8-69df-11e8-8eed-29931fcfd152.PNG)
+![transfer_activity](https://user-images.githubusercontent.com/35909587/41353063-1fee573a-6ee9-11e8-8df2-e8436a09c445.PNG)
+
+### Showing Credit Activity
+The user can view the list of credit cards
+![showing_credit_activity](https://user-images.githubusercontent.com/35909587/41353059-1fafc952-6ee9-11e8-8dfd-a91bf129b237.PNG)
+
+### Showing Credit Detail Activity
+The user can show the detail of credit cards
+![showing_credit_detail_activity](https://user-images.githubusercontent.com/35909587/41353060-1fbfd068-6ee9-11e8-9ec1-4ebc96e04331.PNG)
