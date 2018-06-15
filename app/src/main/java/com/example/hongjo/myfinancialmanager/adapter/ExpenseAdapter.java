@@ -19,6 +19,7 @@ import com.example.hongjo.myfinancialmanager.model.Account;
 import com.example.hongjo.myfinancialmanager.model.CreditCard;
 import com.example.hongjo.myfinancialmanager.model.ExCategory;
 import com.example.hongjo.myfinancialmanager.model.Transaction;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;
 
 import static android.view.View.VISIBLE;
@@ -26,10 +27,12 @@ import static android.view.View.VISIBLE;
 public class ExpenseAdapter extends CursorAdapter {
 
     private DataSource mDataSource;
+    private Context mContext;
 
     public ExpenseAdapter(Context context, Cursor cursor, int flag){
         super(context, cursor, flag);
-        mDataSource = new DataSource(context);
+        this.mDataSource = new DataSource(context);
+        this.mContext = context;
     }
 
     @Override
@@ -67,7 +70,7 @@ public class ExpenseAdapter extends CursorAdapter {
         }
 
         date.setText(exDate);
-        amount.setText(String.format("- %s", exAmount));
+        amount.setText(String.format("- %s", CurrencyFormatter.format(mContext, exAmount)));
         desc.setText(exDesc);
 
         ExCategory exCategory = mDataSource.getExCategory(exCategory_id);

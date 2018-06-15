@@ -1,6 +1,5 @@
 package com.example.hongjo.myfinancialmanager.adapter;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,19 +9,15 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CursorAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
-import com.example.hongjo.myfinancialmanager.model.Account;
-import com.example.hongjo.myfinancialmanager.model.CreditCard;
 import com.example.hongjo.myfinancialmanager.model.ExCategory;
 import com.example.hongjo.myfinancialmanager.model.Transaction;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;
-
-import static android.view.View.VISIBLE;
 
 public class DebtsAdapter extends CursorAdapter {
 
@@ -30,9 +25,11 @@ public class DebtsAdapter extends CursorAdapter {
     private int cardId;
     private Transaction transaction;
     private OnChecked fragment;
+    private Context mContext;
 
     public DebtsAdapter(Context context, Cursor cursor, int flag, int cardId, Fragment fragment){
         super(context, cursor, flag);
+        this.mContext = context;
         this.cardId = cardId;
         this.fragment = (OnChecked) fragment;
         mDataSource = new DataSource(context);
@@ -65,7 +62,7 @@ public class DebtsAdapter extends CursorAdapter {
         transaction = mDataSource.getTransaction(cursor.getInt(cursor.getColumnIndex(TransactionTable.COL1)));
 
         date.setText(exDate);
-        amount.setText(exAmount);
+        amount.setText(CurrencyFormatter.format(mContext, exAmount));
         desc.setText(exDesc);
 
         ExCategory exCategory = mDataSource.getExCategory(exCategory_id);

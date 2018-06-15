@@ -157,12 +157,12 @@ ChoosingInToFragment.FromCallBack{
         switch(item.getItemId()){
             case R.id.income_save:
                 updateIncome();
-                break;
+                return true;
             case R.id.income_delete:
                 deleteIncome();
-                break;
+                return true;
         }
-        return true;
+        return false;
     }
 
     private void updateIncome(){
@@ -217,10 +217,19 @@ ChoosingInToFragment.FromCallBack{
 
         getContentResolver().update(DataProvider.TRANSACTION_URI, values, income_filter, null);
 
-        takeItFromAccount(newAccount, newAmount);
+        deductFromAccount(oldAccount, Double.parseDouble(oldTransaction.getAmount()));
+
+        /**
+         * if the old account is equal to the new account,
+         * get the new data from the database
+         * because the current balance of the account has been changed
+         */
+        if(oldAccount.getId()==newAccount.getId()){
+            newAccount = mDataSource.getAccount(newAccount.getId());
+        }
 
         //add the amount into the original account
-        putItBackToAccount();
+        putItBackToAccount(newAmount);
 
         setResult(RESULT_OK);
         Toast.makeText(this, "Income updated", Toast.LENGTH_SHORT).show();
@@ -228,28 +237,28 @@ ChoosingInToFragment.FromCallBack{
 
     }
 
-    private void putItBackToAccount() {
-        String filter = AccountsTable.COL2+"="+oldAccount.getId();
+    private void putItBackToAccount(double newAmount) {
+        String filter = AccountsTable.COL1+"="+newAccount.getId();
 
         ContentValues values = new ContentValues();
         //get the current balance in the newly chosen accounts
 
-        BigDecimal bigNewNumber = BigDecimalCalculator.add(oldAccount.getCurrent_balance(),
-                oldTransaction.getAmount());
+        BigDecimal bigNewNumber = BigDecimalCalculator.add(newAccount.getCurrent_balance(),
+                String.valueOf(newAmount));
 
         values.put(AccountsTable.COL5, bigNewNumber.toString());
 
         getContentResolver().update(DataProvider.ACCOUNTS_URI, values, filter, null);
     }
 
-    private void takeItFromAccount(Account newAccount, double newAmount) {
-        String filter = AccountsTable.COL2+"="+newAccount.getId();
+    private void deductFromAccount(Account oldAccount, double oldAmount) {
+        String filter = AccountsTable.COL1+"="+oldAccount.getId();
 
         ContentValues values = new ContentValues();
         //get the current balance in the newly chosen accounts
 
-        BigDecimal bigNewNumber = BigDecimalCalculator.subtract(newAccount.getCurrent_balance(),
-                String.valueOf(newAmount));
+        BigDecimal bigNewNumber = BigDecimalCalculator.subtract(oldAccount.getCurrent_balance(),
+                String.valueOf(oldAmount));
         values.put(AccountsTable.COL5, bigNewNumber.toString());
 
         getContentResolver().update(DataProvider.ACCOUNTS_URI, values, filter, null);
@@ -263,7 +272,7 @@ ChoosingInToFragment.FromCallBack{
         setResult(RESULT_OK);
         finish();
         //add the old amount to the current 'from account(or cash)' balance
-        takeItFromAccount(oldAccount, Double.parseDouble(oldTransaction.getAmount()));
+        deductFromAccount(oldAccount, Double.parseDouble(oldTransaction.getAmount()));
 
     }
 

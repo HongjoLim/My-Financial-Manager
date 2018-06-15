@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -43,6 +44,7 @@ import com.example.hongjo.myfinancialmanager.model.Account;
 import com.example.hongjo.myfinancialmanager.model.ExCategory;
 import com.example.hongjo.myfinancialmanager.model.InCategory;
 import com.example.hongjo.myfinancialmanager.tools.BigDecimalCalculator;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -69,6 +71,9 @@ public class MainActivity extends AppCompatActivity
     //the name of the shared preferences set
     private static final String FIRST_START = "FIRST_START";
 
+    //the key to get value for default currency setting from sharedpreference
+    public static final String CURRENCY_KEY = "CURRENCY";
+
     private static final int REQUEST_CODE = 1;
     private static final int IS_FROM_MAIN_FAB = 1001;
     private Cursor cursor;
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean firstStart = prefs.getBoolean(FIRST_START, true);
 
-        currencyCode = prefs.getString("CURRENCY", "Canada");
+        currencyCode = prefs.getString(CURRENCY_KEY, "Canada");
 
         if(firstStart){
             setDefaultCurrencySetting();
@@ -262,14 +267,14 @@ public class MainActivity extends AppCompatActivity
         BigDecimal exBudgetTotal = new BigDecimal(String.valueOf(BigDecimalCalculator.roundValue(0, currencyCode)));
         for(int i = 0; i<exCategories.size(); i++){
             exBudgetTotal = BigDecimalCalculator.add(exBudgetTotal.toString(), exCategories.get(i).getAmount());
-            budgetTotal.setText(exBudgetTotal.toString());
+            budgetTotal.setText(CurrencyFormatter.format(this, exBudgetTotal.toString()));
         }
         TextView budgetSpent = findViewById(R.id.budget_total_spent);
 
         if(totalMonthlyEx.doubleValue()>0) {
-            budgetSpent.setText(String.format("-%s", totalMonthlyEx.toString()));
+            budgetSpent.setText(String.format("-%s", CurrencyFormatter.format(this, totalMonthlyEx.toString())));
         }else {
-            budgetSpent.setText(totalMonthlyEx.toString());
+            budgetSpent.setText(CurrencyFormatter.format(this, totalMonthlyEx.toString()));
         }
     }
 
@@ -341,8 +346,8 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-        total7daysExpense.setText(total7daysEx.toString());
-        total7daysIncome.setText(total7daysIn.toString());
+        total7daysExpense.setText(CurrencyFormatter.format(this, total7daysEx.toString()));
+        total7daysIncome.setText(CurrencyFormatter.format(this, total7daysIn.toString()));
 
         BigDecimal bigNetEarning7days = BigDecimalCalculator.subtract(total7daysIn.toString(),
                 total7daysEx.toString());
@@ -354,12 +359,12 @@ public class MainActivity extends AppCompatActivity
             netEarning7days.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
         }
 
-        netEarning7days.setText(bigNetEarning7days.toString());
+        netEarning7days.setText(CurrencyFormatter.format(this, bigNetEarning7days.toString()));
 
         BigDecimal bigNetEarningMonthly = getMonthlyNetEarnings(0);
 
-        totalMonthlyExpense.setText(totalMonthlyEx.toString());
-        totalMonthlyIncome.setText(totalMonthlyIn.toString());
+        totalMonthlyExpense.setText(CurrencyFormatter.format(this, totalMonthlyEx.toString()));
+        totalMonthlyIncome.setText(CurrencyFormatter.format(this, totalMonthlyIn.toString()));
 
 
         if(bigNetEarningMonthly.doubleValue()>0) {
@@ -369,7 +374,7 @@ public class MainActivity extends AppCompatActivity
             netEarningMonthly.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
         }
 
-        netEarningMonthly.setText(bigNetEarningMonthly.toString());
+        netEarningMonthly.setText(CurrencyFormatter.format(this, bigNetEarningMonthly.toString()));
 
         setAssetsPieChart();
 
@@ -540,7 +545,7 @@ public class MainActivity extends AppCompatActivity
             totalExpectedEarning = BigDecimalCalculator.add(totalExpectedEarning.toString(), inCategory.getAmount());
         }
 
-        expectedEarning.setText(totalExpectedEarning.toString());
+        expectedEarning.setText(CurrencyFormatter.format(this, totalExpectedEarning.toString()));
 
         BigDecimal earningPercent = new BigDecimal("0.00");
         //calculate the (exact earning) / (expected earning) using BigDecimal Class rounding half up

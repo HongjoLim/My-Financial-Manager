@@ -199,7 +199,7 @@ public class SettingAccountsActivity extends AppCompatActivity {
             return;
         }
 
-        //if the user chose to change the current balance, alert dialog should be displayed
+        //if the user chooses to change the current balance, alert dialog should be displayed
         if (Double.parseDouble(oldBalance) != newBalance) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             final BigDecimal difference = BigDecimalCalculator.subtract(String.valueOf(newBalance), oldBalance);
@@ -249,9 +249,9 @@ public class SettingAccountsActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(TransactionTable.COL2, date);
 
-        /*store the difference as absolute value
-        since it does not have to differentiate whether the amount is plus or minus in this column
-        it will be distinguished in COL7
+        /*store the difference as an absolute value
+        since it does not matter whether the amount is bigger than zero or less than zero in this column
+        it will be distinguished by COL7
         */
         values.put(TransactionTable.COL3, String.valueOf(Math.abs(amount)));
         values.put(TransactionTable.COL4, getString(R.string.balance_adjustment));

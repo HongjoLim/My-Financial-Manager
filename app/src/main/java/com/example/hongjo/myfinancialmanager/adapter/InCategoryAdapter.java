@@ -13,13 +13,16 @@ import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.InCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 
 import java.math.BigDecimal;
 
 public class InCategoryAdapter extends CursorAdapter {
 
+    private Context mContext;
     public InCategoryAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
+        this.mContext = context;
     }
 
     @Override
@@ -65,8 +68,8 @@ public class InCategoryAdapter extends CursorAdapter {
         TextView cate_balance = view.findViewById(R.id.category_list_balance);
 
         cate_name.setText(name);
-        cate_amount.setText(amount);
-        cate_balance.setText(totalEarnedAmount.toString());
+        cate_amount.setText(CurrencyFormatter.format(mContext, amount));
+        cate_balance.setText(CurrencyFormatter.format(mContext, totalEarnedAmount.toString()));
 
     }
 }

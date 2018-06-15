@@ -14,12 +14,16 @@ import com.example.hongjo.myfinancialmanager.database.AccountsTable;
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.ExCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;
 
 public class AccountHistoryAdapter extends CursorAdapter {
 
+    Context mContext;
+
     public AccountHistoryAdapter(Context context, Cursor cursor, int flag){
         super(context, cursor, flag);
+        mContext = context;
     }
 
     @Override
@@ -45,7 +49,7 @@ public class AccountHistoryAdapter extends CursorAdapter {
         if(transType==TransactionTable.TRANS_TYPE1||transType==TransactionTable.TRANS_TYPE3||
                 transType==TransactionTable.TRANS_TYPE5) {
             amount.setTextColor(Color.RED);
-            amount.setText("-" + transAmount);
+            amount.setText("-" + CurrencyFormatter.format(mContext, transAmount));
         }else{
             amount.setTextColor(context.getResources().getColor(R.color.colorAccent));
             amount.setText("+" +transAmount);

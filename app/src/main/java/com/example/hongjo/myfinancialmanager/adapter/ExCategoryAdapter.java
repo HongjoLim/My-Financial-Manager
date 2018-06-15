@@ -13,13 +13,17 @@ import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.ExCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 
 import java.math.BigDecimal;
 
 public class ExCategoryAdapter extends CursorAdapter {
 
+    private Context mContext;
+
     public ExCategoryAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
+        this.mContext = context;
     }
 
     @Override
@@ -68,7 +72,7 @@ public class ExCategoryAdapter extends CursorAdapter {
         TextView cate_balance = view.findViewById(R.id.category_list_balance);
 
         cate_name.setText(name);
-        cate_amount.setText(amount);
-        cate_balance.setText(currentBalance);
+        cate_amount.setText(CurrencyFormatter.format(mContext, amount));
+        cate_balance.setText(CurrencyFormatter.format(mContext, currentBalance));
     }
 }

@@ -27,17 +27,23 @@ SelectDateFragment.FromCallBack{
     public final static String FROM_CREDIT_KEY = "FROM_CREDIT";
     public final static int FROM_CREDIT_VALUE = 1;
 
+    //constants for tags that needed to be sent to 'SelectDateFragment'
     public final static String SELECT_DATE = "select due";
-
     public final static int SELECT_DUE_VALUE = 1;
     public final static int SELECT_START_VALUE = 2;
     public final static int SELECT_END_VALUE = 3;
 
+    //declare view components
     private EditText nameEdt;
     private TextView account_name_tv;
     private TextView date_select;
     private TextView cycle_start;
     private TextView cycle_end;
+
+    /*
+    declare an instance of Account class
+    this instance is used to store an account associated with a credit card (credit payment is made in this account)
+     */
     private Account selectedAccount;
 
     @Override
@@ -45,6 +51,7 @@ SelectDateFragment.FromCallBack{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_credit);
 
+        //initialize view components
         nameEdt = findViewById(R.id.credit_name);
         account_name_tv = findViewById(R.id.credit_account);
         cycle_start = findViewById(R.id.credit_cycle_start);
@@ -56,6 +63,7 @@ SelectDateFragment.FromCallBack{
         //set 25th of every month as default
         date_select.setText("25");
 
+        //set up
         setUpAccountListener();
 
         setUpDateSelect();
@@ -88,9 +96,14 @@ SelectDateFragment.FromCallBack{
         account_name_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Bundle to send to choosingExFromFragment to differentiate this activity is calling it
-                //so that, when the user is shown with the fragment, the credit cards list is not visible
-                //because this AddingCreditActivity is calling it
+                /*
+                'ChoosingExFromFragment' is used to choose account.
+                In this activity, the user has to choose the account that credit card payment is withdrawn from
+                Because 'ChoosingExFromFragment' is also used by 'AddingExpenseActivity',
+                this Bundle is sent to the fragment to indicate that
+                this activity is calling the fragment (not 'AddingExpenseActivity)
+                So that, the credit card list will not be shown in the listview in the 'ChoosingExFromFragment'
+                */
                 Bundle b = new Bundle();
                 b.putInt(FROM_CREDIT_KEY, FROM_CREDIT_VALUE);
                 ChoosingExFromFragment choosingExFromFragment = new ChoosingExFromFragment();
@@ -182,20 +195,27 @@ SelectDateFragment.FromCallBack{
         account_name_tv.setText(selectedAccount.getName());
     }
 
-    //this method is not needed in this activity
+    /*
+    this method is not currently needed in this activity.
+    but it has to be overridden because this activity implements ChoosingExFromFragment.FromCallBack interface
+     */
+
     @Override
     public void fromCreditSelected(CreditCard card) {}
 
+    //callback method to set the credit card payment date after the user selects it from fragment
     @Override
     public void payDaySelected(int date) {
         date_select.setText(String.valueOf(date));
     }
 
+    //call back method to set the credit card cycle start date after the user selects it from fragment
     @Override
     public void cycleStartSelected(int start) {
         cycle_start.setText(String.valueOf(start));
     }
 
+    //call back method to set the credit card cycle end date after the user selects it from fragment
     @Override
     public void cycleEndSelected(int end) {
         cycle_end.setText(String.valueOf(end));

@@ -86,6 +86,7 @@ public class ShowingAccountsActivity extends AppCompatActivity implements Loader
     public void onResume(){
         super.onResume();
         mDataSource.open();
+        reload();
     }
 
     @Override

@@ -13,12 +13,16 @@ import com.example.hongjo.myfinancialmanager.database.AccountsTable;
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.InCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;
 
 public class IncomeAdapter extends CursorAdapter {
 
+    private Context mContext;
+
     public IncomeAdapter(Context context, Cursor cursor, int flag){
         super(context, cursor, flag);
+        this.mContext = context;
     }
 
     @Override
@@ -43,7 +47,7 @@ public class IncomeAdapter extends CursorAdapter {
         int inTo_id = cursor.getInt(cursor.getColumnIndex(TransactionTable.COL6));
 
         date.setText(inDate);
-        amount.setText("+"+inAmount);
+        amount.setText(CurrencyFormatter.format(mContext, "+"+inAmount));
         desc.setText(inDesc);
 
         cursor = context.getContentResolver().query(DataProvider.IN_CATEGORY_URI, InCategoryTable.ALL_COLS,

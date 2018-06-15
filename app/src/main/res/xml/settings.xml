@@ -20,13 +20,4 @@
             android:summary="@string/show_adjustment"/>
 
     </PreferenceCategory>
-    <PreferenceCategory android:title="Local">
-
-        <ListPreference
-            android:defaultValue="1"
-            android:entries="@array/currency"
-            android:entryValues="@array/currency"
-            android:key="CURRENCY"
-            android:title="Currency" />
-    </PreferenceCategory>
 </PreferenceScreen>

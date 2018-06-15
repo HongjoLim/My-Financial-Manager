@@ -10,11 +10,17 @@ import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.AccountsTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
+
+import java.util.Currency;
 
 public class AccountsAdapter extends CursorAdapter{
 
+    Context mContext;
+
     public AccountsAdapter(Context context, Cursor cursor, int flag){
         super(context, cursor, flag);
+        mContext = context;
     }
 
     @Override
@@ -34,7 +40,7 @@ public class AccountsAdapter extends CursorAdapter{
 
         accountName.setText(name);
         accountType.setText(type);
-        accountBalance.setText(balance);
+        accountBalance.setText(CurrencyFormatter.format(mContext, balance));
 
     }
 

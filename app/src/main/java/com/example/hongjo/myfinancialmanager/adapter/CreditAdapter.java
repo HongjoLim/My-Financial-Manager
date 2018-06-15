@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.CreditTable;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 
 public class CreditAdapter extends CursorAdapter {
 
@@ -38,7 +39,7 @@ public class CreditAdapter extends CursorAdapter {
 
         name.setText(credit_name);
         date.setText(String.format("due: %s", due));
-        amount.setText(String.format("bal: %s" ,credit_amount));
+        amount.setText(String.format("bal: %s" , CurrencyFormatter.format(mContext, credit_amount)));
         cycle.setText(String.format("cycle: %d to %d", cycleStart, cycleEnd));
     }
 }

@@ -21,6 +21,7 @@ import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
 import com.example.hongjo.myfinancialmanager.tools.BigDecimalCalculator;
+import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 
 import java.math.BigDecimal;
 
@@ -108,7 +109,7 @@ public class ShowingExpensesActivity extends AppCompatActivity implements Loader
                         totalCursor.getString(totalCursor.getColumnIndex(TransactionTable.COL3)));
             }
 
-            total_tv.setText(String.format("total  -%s", String.valueOf(total)));
+            total_tv.setText(String.format("total  -%s", CurrencyFormatter.format(this, String.valueOf(total))));
         }catch(Exception e){
 
         }finally {
