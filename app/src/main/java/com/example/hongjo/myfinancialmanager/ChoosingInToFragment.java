@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.adapter.AccountsAdapter;
 import com.example.hongjo.myfinancialmanager.database.AccountsTable;

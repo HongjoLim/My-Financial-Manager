@@ -172,4 +172,16 @@
     <string name="income_category">Income Category</string>
     <string name="add_category">Add Category</string>
     <string name="exit_category">Edit Category</string>
+    <string name="login_no_user">Cannot find the user data. Please sign up first</string>
+    <string name="sign_in_error">Sign In Error</string>
+    <string name="sign_in_error_prompt_email_password">Both email and password are required</string>
+    <string name="sign_in_error_no_user_in_database">There is no user In database</string>
+    <string name="sign_in_error_no_email_in_database">No Email found in the Database</string>
+    <string name="sign_in_error_no_password">Wrong Password</string>
+    <string name="sign_up_error_user_already_in_database">User Data Already Exists</string>
+    <string name="register_error">Register Error</string>
+    <string name="register_error_invalid_email">Please enter valid Email</string>
+    <string name="register_error_short_password">Please use more than 8 letters for password</string>
+    <string name="register_ok_account_created">Account Created</string>
+    <string name="promt_sign_in">Please sign in</string>
 </resources>

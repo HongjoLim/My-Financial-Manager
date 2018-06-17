@@ -26,10 +26,8 @@ import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
 import com.example.hongjo.myfinancialmanager.database.InCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
-import com.example.hongjo.myfinancialmanager.model.ExCategory;
 import com.example.hongjo.myfinancialmanager.model.InCategory;
 import com.example.hongjo.myfinancialmanager.tools.BigDecimalCalculator;
-import com.example.hongjo.myfinancialmanager.R;
 
 import java.util.ArrayList;
 

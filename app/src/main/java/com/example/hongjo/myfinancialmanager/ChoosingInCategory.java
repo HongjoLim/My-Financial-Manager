@@ -17,7 +17,8 @@ import com.example.hongjo.myfinancialmanager.database.InCategoryTable;
 import com.example.hongjo.myfinancialmanager.model.InCategory;
 
 /**
- * Created by HONGJO on 3/23/2018.
+ * Name: HONGJO
+ * Date: Mar 23, 2018.
  */
 
 public class ChoosingInCategory extends DialogFragment {

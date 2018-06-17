@@ -5,16 +5,17 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.example.hongjo.myfinancialmanager.adapter.AccountsAdapter;
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
-import android.net.Uri;
 
 public class ShowingAccountsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 

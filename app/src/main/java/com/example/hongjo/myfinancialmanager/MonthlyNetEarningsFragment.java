@@ -18,8 +18,10 @@ import java.util.Calendar;
 
 
 /**
- * Date: April 8th, 2018
- * Author: Hongjo Lim
+ * Name: HONGJO Lim
+ * Date: Apr 8th, 2018
+ * Purpose: This class shows the chart of monthly net earnings for the last 6 months.
+ * It is called from MainActivity.
  */
 
 public class MonthlyNetEarningsFragment extends DialogFragment {

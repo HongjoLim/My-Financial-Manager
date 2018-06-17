@@ -3,7 +3,6 @@ package com.example.hongjo.myfinancialmanager;
 
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,11 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SelectDateFragment extends DialogFragment {
 
     private FromCallBack activity;

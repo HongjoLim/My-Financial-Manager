@@ -1,17 +1,14 @@
 package com.example.hongjo.myfinancialmanager;
 
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.net.Uri;
 import android.widget.Toast;
 
 import com.example.hongjo.myfinancialmanager.database.DataProvider;
@@ -42,6 +39,18 @@ public class LoginActivity extends AppCompatActivity{
 
         mDataSource = new DataSource(this);
 
+        /**
+         * Find user data from the database,
+         * if the system cannot find the user data,
+         * the exception would be handled in DataSource class.
+         * But just to be save, handle the exception here as well
+         * */
+        try {
+            user = mDataSource.getUser();
+        }catch(Exception e){
+            Toast.makeText(this, R.string.login_no_user, Toast.LENGTH_SHORT).show();
+        }
+
         emailEdt = findViewById(R.id.email);
         passwordEdt = findViewById(R.id.password);
 
@@ -68,9 +77,12 @@ public class LoginActivity extends AppCompatActivity{
                 case R.id.create_account_button:
                     register();
                     break;
-                    //if the user forgets the password, send it to the user's email
                 case R.id.forgot_password:
-
+                    //if the user forgets the password, send it to the user's email
+                    //TO DO: send the user email with his/her message
+                    if(user!=null) {
+                        Toast.makeText(LoginActivity.this, user.getPassword(), Toast.LENGTH_SHORT).show();
+                    }
                     break;
             }
         }
@@ -85,16 +97,17 @@ public class LoginActivity extends AppCompatActivity{
         user = mDataSource.getUser();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sign In Error");
+        builder.setTitle(R.string.sign_in_error);
 
         if(email.isEmpty()||password.isEmpty()){
-            builder.setMessage("Both email and password are required");
+            builder.setMessage(R.string.sign_in_error_prompt_email_password);
             builder.setCancelable(false).setPositiveButton("OK", null).create().show();
             return;
         }
+
         //if there is no user in the database
         if(user==null){
-            builder.setMessage("There is no user In database");
+            builder.setMessage(R.string.sign_in_error_no_user_in_database);
             builder.setCancelable(false).setPositiveButton("OK", null).create().show();
             return;
         }
@@ -107,12 +120,12 @@ public class LoginActivity extends AppCompatActivity{
                 finish();
             }else{
                 //there is the matching email in the database but the password is different
-                builder.setMessage("Wrong Password");
+                builder.setMessage(R.string.sign_in_error_no_password);
                 builder.setCancelable(false).setPositiveButton("OK", null).create().show();
             }
         }else{
             //if there is no user who has the same email in the database
-            builder.setMessage("No Email found in the Database");
+            builder.setMessage(R.string.sign_in_error_no_email_in_database);
             builder.setCancelable(false).setPositiveButton("OK", null).create().show();
         }
 
@@ -124,10 +137,10 @@ public class LoginActivity extends AppCompatActivity{
         user = mDataSource.getUser();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Register Error");
+        builder.setTitle(R.string.register_error);
 
         if(user!=null){
-            builder.setMessage("User Data Already Exists");
+            builder.setMessage(R.string.sign_up_error_user_already_in_database);
             builder.setPositiveButton("OK", null).create().show();
             return;
         }
@@ -136,15 +149,15 @@ public class LoginActivity extends AppCompatActivity{
         password = passwordEdt.getText().toString();
 
         if(!email.contains("@")){
-            builder.setMessage("Please enter valid Email")
+            builder.setMessage(R.string.register_error_invalid_email)
             .setPositiveButton("OK", null).create().show();
         }else if(password.trim().length()<8){
-            builder.setMessage("Please use more than 8 letters for password")
+            builder.setMessage(R.string.register_error_short_password)
             .setPositiveButton("OK", null).create().show();
         }else{
             insertUser(email, password);
-            builder.setTitle("Account Created");
-            builder.setMessage("Please sign in").setPositiveButton("OK", null).create().show();
+            builder.setTitle(R.string.register_ok_account_created);
+            builder.setMessage(R.string.promt_sign_in).setPositiveButton("OK", null).create().show();
             emailEdt.setText(email);
             passwordEdt.setText("");
         }

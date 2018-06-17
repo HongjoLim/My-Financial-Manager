@@ -12,14 +12,12 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.hongjo.myfinancialmanager.adapter.DebtsAdapter;
 import com.example.hongjo.myfinancialmanager.database.AccountsTable;
@@ -32,11 +30,10 @@ import com.example.hongjo.myfinancialmanager.model.CreditCard;
 import com.example.hongjo.myfinancialmanager.model.Transaction;
 import com.example.hongjo.myfinancialmanager.tools.BigDecimalCalculator;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
- * Created By Hongjo Lim
+ * Name: Hongjo Lim
  * Date: Apr 18th, 2018
  */
 public class PayingDebtsFragment extends DialogFragment implements DebtsAdapter.OnChecked, LoaderManager.LoaderCallbacks<Cursor>{

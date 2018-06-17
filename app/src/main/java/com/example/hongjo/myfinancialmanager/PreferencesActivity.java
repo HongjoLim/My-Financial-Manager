@@ -1,14 +1,13 @@
 package com.example.hongjo.myfinancialmanager;
 
+import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 /**
- * this class is settings preferences for the entire app for user to select app running environment
- * Author: Hongjo Lim
- * Date: April 20th, 2018
- * Time: 16:45 EST
+ * Name: HONGJO Lim
+ * Date: Apr 20th, 2018
+ * Purpose: This class is to set preferences for the entire app for user to customize the running environments
  */
 
 public class PreferencesActivity extends AppCompatActivity {

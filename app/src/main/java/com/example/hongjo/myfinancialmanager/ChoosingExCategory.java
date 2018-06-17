@@ -16,7 +16,9 @@ import com.example.hongjo.myfinancialmanager.database.ExCategoryTable;
 import com.example.hongjo.myfinancialmanager.model.ExCategory;
 
 /**
- * Created by HONGJO on 3/23/2018.
+ * Name: HONGJO
+ * Date: Mar 23, 2018.
+ * Purpose: This class shows list of expense categories that user can choose from
  */
 
 public class ChoosingExCategory extends DialogFragment {
