@@ -260,7 +260,7 @@ public class BudgetDetailFragment extends DialogFragment {
     private void deleteBelongingTransactions() {
 
         //TransactionTable.TRANS_TYPE1 means it is expense
-        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL7+"="+String.valueOf(TransactionTable.TRANS_TYPE1);
+        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL8+"="+String.valueOf(TransactionTable.TRANS_TYPE1);
         String[] selectionArgs = {String.valueOf(exCategory_id)};
 
         getActivity().getContentResolver().delete(DataProvider.TRANSACTION_URI,
@@ -269,7 +269,7 @@ public class BudgetDetailFragment extends DialogFragment {
 
     private void moveBelongingTransactions(int newCategoryId){
 
-        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL7+"=?";
+        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL8+"=?";
         String[] selectionArgs ={String.valueOf(exCategory_id), String.valueOf(TransactionTable.TRANS_TYPE1)};
 
         ContentValues values = new ContentValues();

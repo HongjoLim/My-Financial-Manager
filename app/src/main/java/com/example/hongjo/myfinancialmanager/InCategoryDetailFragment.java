@@ -262,7 +262,7 @@ public class InCategoryDetailFragment extends DialogFragment {
 
     private void deleteBelongingTransactions() {
 
-        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL7+"="+String.valueOf(TransactionTable.TRANS_TYPE2);
+        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL8+"="+String.valueOf(TransactionTable.TRANS_TYPE2);
         String[] selectionArgs = {String.valueOf(inCategory_id)};
 
         getActivity().getContentResolver().delete(DataProvider.TRANSACTION_URI,
@@ -271,7 +271,7 @@ public class InCategoryDetailFragment extends DialogFragment {
 
     private void moveBelongingTransactions(int newCategoryId){
 
-        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL7+"=?";
+        String selection = TransactionTable.COL5+"=? AND "+TransactionTable.COL8+"=?";
         String[] selectionArgs ={String.valueOf(inCategory_id), String.valueOf(TransactionTable.TRANS_TYPE2)};
 
         ContentValues values = new ContentValues();
