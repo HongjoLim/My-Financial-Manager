@@ -1,7 +1,10 @@
 package com.example.hongjo.myfinancialmanager.model;
 
-//recreated on Apr 9th, 2018
-//by Hongjo Lim
+/**
+ * Name: Hongjo Lim
+ * Date: Apr 9th, 2018
+ * Purpose: A model class to hold an account information that is retrieved from database
+ */
 
 public class Account {
 

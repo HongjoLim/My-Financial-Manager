@@ -72,10 +72,6 @@ public class Transaction {
         this.credit_id = credit_id;
     }
 
-    public int getTrans_type() {
-        return trans_type;
-    }
-
     public void setTrans_type(int trans_type) {
         this.trans_type = trans_type;
     }

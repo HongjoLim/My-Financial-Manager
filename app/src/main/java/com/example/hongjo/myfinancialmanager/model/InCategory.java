@@ -5,7 +5,6 @@ public class InCategory {
     private int _id;
     private String name;
     private String amount;
-    private float totalMonthlyEarned;
 
     public InCategory(){}
 
@@ -33,11 +32,4 @@ public class InCategory {
         this.amount = amount;
     }
 
-    public float getTotalMonthlyEarned() {
-        return totalMonthlyEarned;
-    }
-
-    public void setTotalMonthlyEarned(float totalMonthlySpent) {
-        this.totalMonthlyEarned = totalMonthlySpent;
-    }
 }
