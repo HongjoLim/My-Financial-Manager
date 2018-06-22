@@ -47,6 +47,13 @@
         <item>Korea</item>
     </string-array>
 
+    <string-array name="security_question">
+        <item>What is your mother\'s first name?</item>
+        <item>Who is your most influential mentor\'s name?</item>
+        <item>What is the name of your school?</item>
+        <item>What is your major?</item>
+    </string-array>
+
     <string-array name="dates">
         <item>1</item>
         <item>2</item>
@@ -154,16 +161,21 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
+    <string name="select_security_question">Choose a security question</string>
+    <string name="prompt_security_answer">Enter your answer</string>
     <string name="action_sign_in">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
+    <string name="error_security_question_notselected">Please choose one security question</string>
+    <string name="error_invalid_security_answer">Please enter your security answer</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
     <string name="sign_in">Sign In</string>
-    <string name="register">Create Account</string>
+    <string name="register">Register</string>
+    <string name="create_account">Create Account</string>
     <string name="security">Security</string>
     <string name="enable_login_summary">Set Login Function On For Security</string>
     <string name="data_display">Data Display</string>
@@ -184,4 +196,5 @@
     <string name="register_error_short_password">Please use more than 8 letters for password</string>
     <string name="register_ok_account_created">Account Created</string>
     <string name="promt_sign_in">Please sign in</string>
+    <string name="click_to_choose_your_security_question">Click to choose your security question</string>
 </resources>

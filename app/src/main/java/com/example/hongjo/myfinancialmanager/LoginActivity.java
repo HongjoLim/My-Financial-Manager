@@ -1,7 +1,11 @@
 package com.example.hongjo.myfinancialmanager;
 
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +21,8 @@ import com.example.hongjo.myfinancialmanager.database.UserTable;
 import com.example.hongjo.myfinancialmanager.model.User;
 
 //this app only accepts 1 user account because it is run in local Database
-public class LoginActivity extends AppCompatActivity{
+public class LoginActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>,
+ShowingSecurityQuestionFragment.FromCallBack{
 
     //key for shared preference
     public static final String ENABLE_LOGIN = "ENABLE_LOGIN";
@@ -31,6 +36,12 @@ public class LoginActivity extends AppCompatActivity{
     private String email, password;
 
     private TextView forgotPassword;
+
+    /**
+     * This variable is used as the key, when passing a security question string
+     * as an argument to the ShowingSecurityQuestionFragment.java class
+     */
+    public static final String SECURITY_QUESTION = "security_question";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +68,14 @@ public class LoginActivity extends AppCompatActivity{
         forgotPassword = findViewById(R.id.forgot_password);
 
         Button signIn = findViewById(R.id.sign_in_button);
-        Button createAccount = findViewById(R.id.create_account_button);
+        Button register = findViewById(R.id.register);
 
         signIn.setOnClickListener(listener);
-        createAccount.setOnClickListener(listener);
+        register.setOnClickListener(listener);
         forgotPassword.setOnClickListener(listener);
+
+        //init the LoaderManager
+        getLoaderManager().initLoader(0, null, this);
 
     }
 
@@ -74,14 +88,26 @@ public class LoginActivity extends AppCompatActivity{
                 case R.id.sign_in_button:
                     checkValidity();
                     break;
-                case R.id.create_account_button:
-                    register();
+                case R.id.register:
+                    //if user data already exists, show this alert dialog
+                    if(user!=null){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                        builder.setTitle(R.string.register_error);
+                        builder.setMessage(R.string.sign_up_error_user_already_in_database);
+                        builder.setPositiveButton("OK", null).create().show();
+                        return;
+                    }
+                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.forgot_password:
                     //if the user forgets the password, send it to the user's email
-                    //TO DO: send the user email with his/her message
+                    //TO DO: let the user answer his/her security question
                     if(user!=null) {
-                        Toast.makeText(LoginActivity.this, user.getPassword(), Toast.LENGTH_SHORT).show();
+                        promptSecurityQuestion();
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Please create a new account", Toast.LENGTH_SHORT).show();
                     }
                     break;
             }
@@ -128,50 +154,70 @@ public class LoginActivity extends AppCompatActivity{
             builder.setMessage(R.string.sign_in_error_no_email_in_database);
             builder.setCancelable(false).setPositiveButton("OK", null).create().show();
         }
+    }
+
+    /**
+     * This method is to show the security question and get the answer to it.
+     * It is called when the user forgets the password or id
+     */
+
+    private void promptSecurityQuestion(){
+
+        ShowingSecurityQuestionFragment fragment = new ShowingSecurityQuestionFragment();
+
+        int index = user.getSecurityQNum();
+        String securityQuestion = getResources().getStringArray(R.array.security_question)[index];
+
+        Bundle bundle = new Bundle();
+        bundle.putString(SECURITY_QUESTION, securityQuestion);
+        fragment.setArguments(bundle);
+        fragment.show(getSupportFragmentManager(), "PROMPT_SECURITY_QUESTION");
 
     }
 
-    //this method is to create account
-    private void register(){
-
+    private void reLoad(){
+        getLoaderManager().restartLoader(0, null, this);
         user = mDataSource.getUser();
+    }
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.register_error);
+    @Override
+    public void onResume(){
+        super.onResume();
+        mDataSource.open();
+        reLoad();
+    }
 
-        if(user!=null){
-            builder.setMessage(R.string.sign_up_error_user_already_in_database);
-            builder.setPositiveButton("OK", null).create().show();
-            return;
-        }
+    @Override
+    public void onPause(){
+        super.onPause();
+        mDataSource.close();
+    }
 
-        email = emailEdt.getText().toString();
-        password = passwordEdt.getText().toString();
 
-        if(!email.contains("@")){
-            builder.setMessage(R.string.register_error_invalid_email)
-            .setPositiveButton("OK", null).create().show();
-        }else if(password.trim().length()<8){
-            builder.setMessage(R.string.register_error_short_password)
-            .setPositiveButton("OK", null).create().show();
+    @Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        return new CursorLoader(this, DataProvider.USER_URI,
+                null, null, null, null);
+    }
+
+    @Override
+    public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor cursor) {
+
+    }
+
+    @Override
+    public void onLoaderReset(android.content.Loader<Cursor> loader) {
+
+    }
+
+    @Override
+    public void securityQuestionAnswered(String securityAnswer) {
+
+        if(securityAnswer.toLowerCase().equals(user.getSecuirtyAnswer().toLowerCase())){
+            Toast.makeText(this, "Your password is: "+user.getPassword() , Toast.LENGTH_LONG).show();
         }else{
-            insertUser(email, password);
-            builder.setTitle(R.string.register_ok_account_created);
-            builder.setMessage(R.string.promt_sign_in).setPositiveButton("OK", null).create().show();
-            emailEdt.setText(email);
-            passwordEdt.setText("");
+            Toast.makeText(this, "Wrong security answer!", Toast.LENGTH_SHORT).show();
         }
     }
-
-    private void insertUser(String email, String password){
-
-        ContentValues values = new ContentValues();
-
-        values.put(UserTable.COL1, email);
-        values.put(UserTable.COL2, password);
-
-        getContentResolver().insert(DataProvider.USER_URI, values);
-    }
-
 }
 

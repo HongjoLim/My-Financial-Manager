@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:theme="@style/AppTheme.NoActionBar"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:padding="24dp"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/email"
+                    android:id="@+id/register_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
@@ -57,12 +57,21 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:id="@+id/invalid_email_warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"
+                android:text="@string/error_invalid_email"/>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/register_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
@@ -75,49 +84,72 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <LinearLayout
-                android:layout_marginTop="32dp"
+            <TextView
+                android:id="@+id/invalid_password_warning"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"
+                android:text="@string/error_invalid_password"/>
+
+            <TextView
+                android:id="@+id/security_question"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/click_to_choose_your_security_question"
+                android:textSize="@dimen/text_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/security_question_notselected_warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"
+                android:text="@string/error_security_question_notselected"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/sign_in_button"
-                    android:layout_width="120dp"
-                    android:layout_marginEnd="16dp"
+                <EditText
+                    android:id="@+id/security_answer"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:backgroundTint="@android:color/white"
-                    android:text="@string/sign_in"
-                    android:textSize="@dimen/text_size"/>
+                    android:hint="@string/prompt_security_answer"
+                    android:imeActionId="6"
+                    android:imeActionLabel="@string/action_sign_in"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:visibility="gone"
+                    android:singleLine="true" />
 
-                <Button
-                    android:id="@+id/register"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:backgroundTint="@android:color/white"
-                    android:text="@string/register"
-                    android:textSize="@dimen/text_size"/>
-
-
-            </LinearLayout>
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
-                android:id="@+id/forgot_password"
-                android:layout_marginTop="32dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="forgot password"
-                android:layout_gravity="center"/>
+                android:id="@+id/invalid_security_answer_warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"
+                android:text="@string/error_invalid_security_answer"/>
 
-            <TextView
+
+            <Button
                 android:layout_marginTop="16dp"
+                android:id="@+id/create_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You can disable log in function in Settings menu"
-                android:layout_gravity="center"/>
+                android:textAlignment="center"
+                android:textSize="@dimen/text_size"
+                android:backgroundTint="@android:color/white"
+                android:text="@string/create_account"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

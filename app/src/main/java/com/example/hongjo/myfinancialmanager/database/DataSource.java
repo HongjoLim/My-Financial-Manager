@@ -60,7 +60,9 @@ public class DataSource {
                 while (cursor.moveToNext()) {
 
                     user.setEmail(cursor.getString(cursor.getColumnIndex(UserTable.COL1)));
-                    user.setPassword((cursor.getString(cursor.getColumnIndex(UserTable.COL2))));
+                    user.setPassword(cursor.getString(cursor.getColumnIndex(UserTable.COL2)));
+                    user.setSecurityQNum(cursor.getInt(cursor.getColumnIndex(UserTable.COL3)));
+                    user.setSecuirtyAnswer(cursor.getString(cursor.getColumnIndex(UserTable.COL4)));
                 }
             } finally {
                 if (!cursor.isClosed() && cursor != null) {
