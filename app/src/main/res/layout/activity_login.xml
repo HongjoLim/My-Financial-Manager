@@ -8,15 +8,6 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
-
     <LinearLayout
         android:padding="24dp"
         android:gravity="center"
@@ -25,20 +16,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/logo"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="My financial manager"
+            android:layout_marginBottom="48dp"
+            android:layout_marginTop="48dp"
+            android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textSize="56sp"
             android:textStyle="italic|bold"/>
 
     </LinearLayout>

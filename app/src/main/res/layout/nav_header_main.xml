@@ -18,17 +18,11 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/logo"
-            android:layout_gravity="start"
-            android:layout_width="72dp"
-            android:layout_height="72dp" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:paddingBottom="10dp"
             android:text="@string/app_name"
