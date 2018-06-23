@@ -4,7 +4,9 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:minWidth="@dimen/dialog_min_weight"
+    android:minHeight="@dimen/dialog_min_height">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -21,12 +23,14 @@
                 android:id="@+id/radio_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
                 android:text="Delete Belonging Transactions" />
 
             <RadioButton
                 android:id="@+id/radio_move"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
                 android:text="Move Transactions to Another " />
 
         </RadioGroup>

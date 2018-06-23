@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
+    android:minWidth="@dimen/dialog_min_weight"
+    android:minHeight="@dimen/dialog_min_height"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -13,9 +16,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:paddingLeft="16dp"
             android:gravity="center_vertical"
             android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:text="@string/select_payment_date"/>
 

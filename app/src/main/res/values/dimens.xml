@@ -9,4 +9,7 @@
     <dimen name="list_item_spacing_half">8dp</dimen>
     <dimen name="text_size">18sp</dimen>
     <dimen name="adding_transaction_line_height">56dp</dimen>
+    <dimen name="category_icon_size">36dp</dimen>
+    <dimen name="dialog_min_height">320dp</dimen>
+    <dimen name="dialog_min_weight">300dp</dimen>
 </resources>

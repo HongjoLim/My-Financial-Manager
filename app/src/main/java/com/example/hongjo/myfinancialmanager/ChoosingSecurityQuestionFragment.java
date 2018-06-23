@@ -48,9 +48,9 @@ public class ChoosingSecurityQuestionFragment extends DialogFragment {
         securityQuestionList = view.findViewById(R.id.security_question_listView);
 
         securityQuestions = getActivity().getResources().getStringArray(R.array.security_question);
-        securityQuestionList.setAdapter(new ArrayAdapter<String>(getContext(),
-                R.layout.security_question_item,
-                getActivity().getResources().getStringArray(R.array.security_question)));
+        securityQuestionList.setAdapter(new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1,
+                securityQuestions));
 
         securityQuestionList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

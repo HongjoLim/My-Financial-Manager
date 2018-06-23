@@ -4,11 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
-    tools:context=".ShowingSecurityQuestionFragment">
+    tools:context=".ShowingSecurityQuestionFragment"
+    android:minWidth="@dimen/dialog_min_weight"
+    android:minHeight="@dimen/dialog_min_height">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -25,13 +28,13 @@
             android:orientation="vertical"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
+            android:gravity="center"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/security_question_textView"
                 android:layout_width="match_parent"
                 android:gravity="center_vertical"
-                android:paddingStart="12dp"
                 android:layout_marginTop="12dp"
                 android:textSize="@dimen/text_size"
                 android:layout_height="@dimen/adding_transaction_line_height" />
@@ -63,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SUBMIT"
+                    android:textSize="@dimen/text_size"
                     style="?android:borderlessButtonStyle"/>
 
             </LinearLayout>
