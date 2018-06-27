@@ -49,9 +49,9 @@
 
     <string-array name="security_question">
         <item>What is your mother\'s first name?</item>
-        <item>Who is your most influential mentor\'s name?</item>
-        <item>What is the name of your school?</item>
-        <item>What is your major?</item>
+        <item>What is your most influential mentor\'s name?</item>
+        <item>What is the name of your first school?</item>
+        <item>What is (was) your major?</item>
     </string-array>
 
     <string-array name="dates">

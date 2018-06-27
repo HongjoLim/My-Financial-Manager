@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChoosingSecurityQuestionFragment"
-    android:minHeight="@dimen/dialog_min_height"
     android:padding="8dp"
     android:minWidth="@dimen/dialog_min_weight">
 

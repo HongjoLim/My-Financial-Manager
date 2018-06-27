@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:minWidth="@dimen/dialog_min_weight"
-    android:minHeight="@dimen/dialog_min_height"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout

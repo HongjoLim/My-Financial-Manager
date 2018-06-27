@@ -4,8 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minWidth="@dimen/dialog_min_weight"
-    android:minHeight="@dimen/dialog_min_height">
+    android:minWidth="@dimen/dialog_min_weight">
 
     <LinearLayout
         android:padding="5dp"
