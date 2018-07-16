@@ -1,9 +1,9 @@
-# My Financial Manager
+# MFManager
 
-This is a personal project to learn about Android Studio. It helps the user track all the expenditure and revenue by recording them as the user spends money.
+This is a personal project to learn about Android mobile application development. This application helps the user keep track of all the expenditures and income by recording them.
 
 ## Project title
-My Financial Manager (original: My Thrifty Guide)
+MFManager (My Financial Manager)
 
 ## Project duration
 Mar 1st, 2018 - Apr 8th, 2018.
@@ -25,8 +25,7 @@ A user can…
 
 ## Functions
 <ul>
-<li>displays net earnings for last 7 days</li>
-<li>displays monthly net earnings for the past 6 months</li>
+<li>displays net earnings for last 7 days</li><li>displays monthly net earnings for the past 6 months</li>
 <li>displays the percentage of this earnings of this month</li>
 <li>displays the percentage of expense in each budget category</li>
 </ul>
@@ -42,6 +41,11 @@ A user can…
 <ul>
 <li>Lynda.com</li>
 <li><a href="https://github.com/PhilJay/MPAndroidChart" title="MPAndroidChart github page">MPAndroidChart</a> by PhilJay</li></ul>
+
+## How To Get Started With The App
+https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20User%20Guide.pdf
+
+Follow the steps to download, and get started on MFManager!
 
 ## ScreenShots
 ### Login Activity 
