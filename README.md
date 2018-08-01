@@ -1,9 +1,9 @@
-# My Financial Manager
+# MFManager
 
-This is a personal project to learn about Android Studio. It helps the user track all the expenditure and revenue by recording them as the user spends money.
+This is a personal project to learn about Android mobile application development. This application helps the user keep track of all the expenditures and income by recording them.
 
 ## Project title
-My Financial Manager (original: My Thrifty Guide)
+MFManager (My Financial Manager)
 
 ## Project duration
 Mar 1st, 2018 - Apr 8th, 2018.
@@ -25,8 +25,7 @@ A user can…
 
 ## Functions
 <ul>
-<li>displays net earnings for last 7 days</li>
-<li>displays monthly net earnings for the past 6 months</li>
+<li>displays net earnings for last 7 days</li><li>displays monthly net earnings for the past 6 months</li>
 <li>displays the percentage of this earnings of this month</li>
 <li>displays the percentage of expense in each budget category</li>
 </ul>
@@ -41,7 +40,27 @@ A user can…
 ## Sources
 <ul>
 <li>Lynda.com</li>
-<li><a href="https://github.com/PhilJay/MPAndroidChart" title="MPAndroidChart github page">MPAndroidChart</a> by PhilJay</li></ul>
+<li>This code uses [MPAndroidChart - Copyright 2018 Philipp Jahoda] which is licensed under the Apache 2.0 License, and can be obtained [here - <a href="https://github.com/PhilJay/MPAndroidChart" title="MPAndroidChart github page">MPAndroidChart</a> by PhilJay ]</li></ul>
+
+## License
+Copyright 2018 HONGJO LIM
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+## How To Get Started With The App
+<a href="https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20User%20Guide.pdf">Quick Start Guide</a>
+
+Follow the steps to download, and get started on MFManager!
 
 ## ScreenShots
 ### Login Activity 
