@@ -40,10 +40,14 @@ A user can…
 ## Sources
 <ul>
 <li>Lynda.com</li>
-<li><a href="https://github.com/PhilJay/MPAndroidChart" title="MPAndroidChart github page">MPAndroidChart</a> by PhilJay</li></ul>
+<li>This code uses [MPAndroidChart - Copyright 2018 Philipp Jahoda] which is licensed under the Apache 2.0 License, and can be obtained [here - <a href="https://github.com/PhilJay/MPAndroidChart" title="MPAndroidChart github page">MPAndroidChart</a> by PhilJay ]</li></ul>
+<li>http://www.apache.org/licenses/LICENSE-2.0</li>
+
+## License
+
 
 ## How To Get Started With The App
-https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20User%20Guide.pdf
+<a href="https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20User%20Guide.pdf">Quick Start Guide</a>
 
 Follow the steps to download, and get started on MFManager!
 
