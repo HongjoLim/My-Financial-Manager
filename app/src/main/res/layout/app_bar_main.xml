@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.example.hongjo.myfinancialmanager.MainActivity">
+    tools:context="com.example.hongjolim.mfmanager.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

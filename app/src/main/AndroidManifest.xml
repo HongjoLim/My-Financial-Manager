@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hongjo.myfinancialmanager">
+    package="com.hongjolim.mfmanager">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -15,17 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.hongjolim.mfmanager.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <provider
-            android:name=".database.DataProvider"
+            android:name="com.hongjolim.mfmanager.database.DataProvider"
             android:authorities="com.example.myfinancialmanager.dataprovider"
             android:exported="false" />
 
         <activity
-            android:name=".SplashScreen"
+            android:name="com.hongjolim.mfmanager.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,69 +34,69 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingAccountsActivity"
+            android:name="com.hongjolim.mfmanager.SettingAccountsActivity"
             android:label="Add Accounts"
-            android:parentActivityName=".ShowingAccountsActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingAccountsActivity" />
         <activity
-            android:name=".ShowingAccountsActivity"
+            android:name="com.hongjolim.mfmanager.ShowingAccountsActivity"
             android:label="My Accounts"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".BudgetActivity"
+            android:name="com.hongjolim.mfmanager.BudgetActivity"
             android:label="Budget"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".ShowingExpensesActivity"
+            android:name="com.hongjolim.mfmanager.ShowingExpensesActivity"
             android:label="Expense"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".AddingExpenseActivity"
+            android:name="com.hongjolim.mfmanager.AddingExpenseActivity"
             android:label="Add Expense"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".AddingIncomeActivity"
+            android:name="com.hongjolim.mfmanager.AddingIncomeActivity"
             android:label="Add Income"
-            android:parentActivityName=".ShowingIncomeActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingIncomeActivity" />
         <activity
-            android:name=".ShowingIncomeActivity"
+            android:name="com.hongjolim.mfmanager.ShowingIncomeActivity"
             android:label="Income"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".ShowingExpensesDetailActivity"
+            android:name="com.hongjolim.mfmanager.ShowingExpensesDetailActivity"
             android:label="Expense Detail"
-            android:parentActivityName=".ShowingExpensesActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingExpensesActivity" />
         <activity
-            android:name=".ShowingIncomeDetailActivity"
+            android:name="com.hongjolim.mfmanager.ShowingIncomeDetailActivity"
             android:label="Income Detail"
-            android:parentActivityName=".ShowingIncomeActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingIncomeActivity" />
         <activity
-            android:name=".TransferActivity"
+            android:name="com.hongjolim.mfmanager.TransferActivity"
             android:label="@string/transfer"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".IncomeCategoryActivity"
+            android:name="com.hongjolim.mfmanager.IncomeCategoryActivity"
             android:label="Income Category"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".ShowingCreditActivity"
+            android:name="com.hongjolim.mfmanager.ShowingCreditActivity"
             android:label="Credit Cards"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
         <activity
-            android:name=".AddingCreditActivity"
+            android:name="com.hongjolim.mfmanager.AddingCreditActivity"
             android:label="Adding Cards"
-            android:parentActivityName=".ShowingCreditActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingCreditActivity" />
         <activity
-            android:name=".ShowingCreditDetailActivity"
+            android:name="com.hongjolim.mfmanager.ShowingCreditDetailActivity"
             android:label="Credit Detail"
-            android:parentActivityName=".ShowingCreditActivity" />
+            android:parentActivityName="com.hongjolim.mfmanager.ShowingCreditActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.hongjolim.mfmanager.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PreferencesActivity"
+            android:name="com.hongjolim.mfmanager.PreferencesActivity"
             android:label="Settings"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".RegisterActivity"
+            android:parentActivityName="com.hongjolim.mfmanager.MainActivity" />
+        <activity android:name="com.hongjolim.mfmanager.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
