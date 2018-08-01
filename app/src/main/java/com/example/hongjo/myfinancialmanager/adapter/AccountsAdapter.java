@@ -12,8 +12,6 @@ import com.example.hongjo.myfinancialmanager.R;
 import com.example.hongjo.myfinancialmanager.database.AccountsTable;
 import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 
-import java.util.Currency;
-
 public class AccountsAdapter extends CursorAdapter{
 
     Context mContext;

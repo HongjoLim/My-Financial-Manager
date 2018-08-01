@@ -110,8 +110,6 @@ public class ShowingExpensesActivity extends AppCompatActivity implements Loader
             }
 
             total_tv.setText(String.format("total  -%s", CurrencyFormatter.format(this, String.valueOf(total))));
-        }catch(Exception e){
-
         }finally {
             if (totalCursor != null && totalCursor.isClosed())
                 totalCursor.close();

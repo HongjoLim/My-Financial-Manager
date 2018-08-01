@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-        TextView noExpense = findViewById(R.id.show_no_exense);
+        TextView noExpense = findViewById(R.id.show_no_expense);
         if(yValues.size()>=1){
             //if there is more than 1 expense corresponding any expense category, erase the text saying that there is no expense
             noExpense.setVisibility(GONE);

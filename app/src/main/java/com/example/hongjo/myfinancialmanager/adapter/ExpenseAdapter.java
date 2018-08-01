@@ -6,23 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.R;
-import com.example.hongjo.myfinancialmanager.database.AccountsTable;
-import com.example.hongjo.myfinancialmanager.database.DataProvider;
 import com.example.hongjo.myfinancialmanager.database.DataSource;
-import com.example.hongjo.myfinancialmanager.database.ExCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
 import com.example.hongjo.myfinancialmanager.model.Account;
 import com.example.hongjo.myfinancialmanager.model.CreditCard;
 import com.example.hongjo.myfinancialmanager.model.ExCategory;
-import com.example.hongjo.myfinancialmanager.model.Transaction;
 import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;
-
-import static android.view.View.VISIBLE;
 
 public class ExpenseAdapter extends CursorAdapter {
 

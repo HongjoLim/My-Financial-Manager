@@ -10,9 +10,6 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.example.hongjo.myfinancialmanager.R;
-import com.example.hongjo.myfinancialmanager.database.AccountsTable;
-import com.example.hongjo.myfinancialmanager.database.DataProvider;
-import com.example.hongjo.myfinancialmanager.database.ExCategoryTable;
 import com.example.hongjo.myfinancialmanager.database.TransactionTable;
 import com.example.hongjo.myfinancialmanager.tools.CurrencyFormatter;
 import com.example.hongjo.myfinancialmanager.tools.DateFormatConverter;

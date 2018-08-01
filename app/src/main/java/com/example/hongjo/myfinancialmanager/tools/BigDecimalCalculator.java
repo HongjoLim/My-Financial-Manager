@@ -1,9 +1,4 @@
 package com.example.hongjo.myfinancialmanager.tools;
-
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.widget.Toast;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Currency;

@@ -195,7 +195,6 @@
     <string name="register_error_invalid_email">Please enter valid Email</string>
     <string name="register_error_short_password">Please use more than 8 letters for password</string>
     <string name="register_ok_account_created">Account Created</string>
-    <string name="promt_sign_in">Please sign in</string>
+    <string name="prompt_sign_in">Please sign in</string>
     <string name="click_to_choose_your_security_question">Click to choose your security question</string>
-    <string name="lisence">This program uses "MPAndroidChart" - Copyright 2018 by Philipp Jahoda which is licensed under the Apache 2.0 License</string>
 </resources>

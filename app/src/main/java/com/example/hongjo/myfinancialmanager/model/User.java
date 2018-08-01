@@ -13,10 +13,10 @@ public class User {
     private int securityQNum;
 
     /**
-     * The answer to the additional secuirty question
+     * The answer to the additional security question
 
      */
-    private String secuirtyAnswer;
+    private String securityAnswer;
 
     //the default constructor
     public User() {}
@@ -46,10 +46,10 @@ public class User {
     }
 
     public String getSecuirtyAnswer() {
-        return secuirtyAnswer;
+        return securityAnswer;
     }
 
     public void setSecuirtyAnswer(String secuirtyAnswer) {
-        this.secuirtyAnswer = secuirtyAnswer;
+        this.securityAnswer = secuirtyAnswer;
     }
 }
