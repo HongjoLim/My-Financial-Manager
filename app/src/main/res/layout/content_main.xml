@@ -485,13 +485,6 @@
                 android:padding="8dp"
                 android:text="Copyright © 2018 HONGJO LIM"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/lisence"
-                android:textAlignment="center"
-                android:padding="8dp"
-                />
         </LinearLayout>
     </ScrollView>
 
