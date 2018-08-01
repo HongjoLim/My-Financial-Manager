@@ -11,7 +11,7 @@ import android.support.annotation.Nullable;
 
 public class DataProvider extends ContentProvider {
 
-    private static final String AUTHORITY = "com.example.myfinancialmanager.dataprovider";
+    private static final String AUTHORITY = "com.hongjolim.mfmanager.dataprovider";
     private static final String BASE_PATH_USER = "USER";
     private static final String BASE_PATH_ACCOUNT = "ACCOUNTS";
     private static final String BASE_PATH_EX_CATEGORY = "EX_CATEGORY";
