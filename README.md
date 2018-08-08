@@ -58,7 +58,7 @@ Copyright 2018 HONGJO LIM
    limitations under the License.
 
 ## How To Get Started With The App
-<a href="https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20User%20Guide.pdf">Quick Start Guide</a>
+<a href="https://github.com/czebahi/My-Financial-Manager/blob/master/MFManager%20Quick%20Start%20Guide.pdf">Quick Start Guide</a>
 
 Follow the steps to download, and get started on MFManager!
 
