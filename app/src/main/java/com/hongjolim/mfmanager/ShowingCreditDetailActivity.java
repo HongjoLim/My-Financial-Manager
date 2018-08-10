@@ -193,7 +193,7 @@ public class ShowingCreditDetailActivity extends AppCompatActivity implements
         final String selection = CreditTable.COL1 + "=?";
         final String[] selectionArgs = {String.valueOf(card.getId())};
 
-        if(Double.parseDouble(card.getAmount())>0){
+        if(Double.parseDouble(card.getAmount())>0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Unpaid balance will be withdrawn from the associated account");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -209,8 +209,8 @@ public class ShowingCreditDetailActivity extends AppCompatActivity implements
                     String[] selectionArgs2 = {String.valueOf(account.getId())};
 
                     //subtract the balance of the credit card the balance of the account
-                    getContentResolver().update(DataProvider.ACCOUNTS_URI, values1, AccountsTable.COL1+"=?",
-                    selectionArgs2);
+                    getContentResolver().update(DataProvider.ACCOUNTS_URI, values1, AccountsTable.COL1 + "=?",
+                            selectionArgs2);
 
                     //update data in Transaction table -> put null for credit id and put account id
                     ContentValues values2 = new ContentValues();
@@ -218,17 +218,23 @@ public class ShowingCreditDetailActivity extends AppCompatActivity implements
                     values2.putNull(TransactionTable.COL7);
 
                     getContentResolver().update(DataProvider.TRANSACTION_URI, values2,
-                            TransactionTable.COL7+"=?", selectionArgs);
-
-                    //delete the data of the credit card in credit card table
-                    getContentResolver().delete(DataProvider.CREDIT_URI,
-                            selection, selectionArgs);
-
-                    setResult(RESULT_OK);
-                    finish();
+                            TransactionTable.COL7 + "=?", selectionArgs);
                 }
             }).setNegativeButton("Cancel", null).setCancelable(false).create().show();
         }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to delete this card?").setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //delete the data of the credit card in credit card table
+                getContentResolver().delete(DataProvider.CREDIT_URI,
+                        selection, selectionArgs);
+                setResult(RESULT_OK);
+                finish();
+            }
+        }).setNegativeButton("Cancel", null).show();
+
     }
 
     //to handle the event when the user touches the account name text view

@@ -251,27 +251,32 @@ ChoosingExFromFragment.FromCallBack{
             //add the amount into the original account
             putItBackToAccount();
 
-            if(oldAccount.getId()==(newAccount.getId())){
-                /**
-                *  if old account is equal to new Account, get new data from the database
-                *  because the old transaction has been added to it, and its current balance has been changed
-                **/
-                newAccount = mDataSource.getAccount(newAccount.getId());
+            if(newAccount!=null) {
+                if (oldAccount.getId() == (newAccount.getId())) {
+                    /**
+                     *  if old account is equal to new Account, get new data from the database
+                     *  because the old transaction has been added to it, and its current balance has been changed
+                     **/
+                    newAccount = mDataSource.getAccount(newAccount.getId());
+                }
             }
         }else{
+
             subtractDebtBackFromCard();
 
             /**
              * if old card is equal to new card, get new data from the database
              * because the old transaction has been added to it, and its current balance has been changed
              **/
-            if(oldCard.getId()==newCard.getId()){
-                newCard = mDataSource.getCreditCard(newCard.getId());
+            if(newCard!=null) {
+                if (oldCard.getId() == newCard.getId()) {
+                    newCard = mDataSource.getCreditCard(newCard.getId());
+                }
             }
         }
 
         if(newAccount!=null) {
-            //Now, deduct the new Amount from the current balance of the new account
+            //Now, deduct the new Amount from the new account
             deductFromAccount(newAmount);
         }else{
             addDebtToCard(newAmount);
@@ -289,8 +294,6 @@ ChoosingExFromFragment.FromCallBack{
         ContentValues values = new ContentValues();
         BigDecimal bigNewAmount = BigDecimalCalculator.add(oldAccount.getCurrent_balance(), oldTransaction.getAmount());
         values.put(AccountsTable.COL5, bigNewAmount.toString());
-
-        Toast.makeText(this, bigNewAmount.toString()+" added back", Toast.LENGTH_SHORT).show();
 
         getContentResolver().update(DataProvider.ACCOUNTS_URI, values, filter, null);
     }
@@ -311,8 +314,6 @@ ChoosingExFromFragment.FromCallBack{
         ContentValues values = new ContentValues();
         BigDecimal bigNewAmount = BigDecimalCalculator.subtract(newAccount.getCurrent_balance(), String.valueOf(newAmount));
         values.put(AccountsTable.COL5, bigNewAmount.toString());
-
-        Toast.makeText(this, bigNewAmount.toString()+"deducted from", Toast.LENGTH_SHORT).show();
 
         getContentResolver().update(DataProvider.ACCOUNTS_URI, values, filter, null);
     }

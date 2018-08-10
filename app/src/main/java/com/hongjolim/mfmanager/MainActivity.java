@@ -35,6 +35,9 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.hongjolim.mfmanager.database.AccountsTable;
 import com.hongjolim.mfmanager.database.DataProvider;
 import com.hongjolim.mfmanager.database.DataSource;
@@ -78,10 +81,20 @@ public class MainActivity extends AppCompatActivity
     private SharedPreferences prefs;
     String currencyCode;
 
+    AdView mAdview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        MobileAds.initialize(this, "ca-app-pub-1465820537677658/8541972644");
+
+        mAdview = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
+
 
         mDataSource = new DataSource(this);
         mDataSource.open();
